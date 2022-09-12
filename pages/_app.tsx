@@ -17,6 +17,13 @@ import {
 } from '@rainbow-me/rainbowkit-siwe-next-auth';
 import { ChakraProvider } from '@chakra-ui/react'
 import Test from './components/Test';
+import WalletTab from './components/WalletTab';
+import * as Urql from "urql"
+
+
+const client = Urql.createClient({
+  url: 'https://api.studio.thegraph.com/query/32185/arbit/v0.0.1',
+});
 
 
 const { chains, provider, webSocketProvider } = configureChains(
@@ -76,8 +83,10 @@ export default function App({ Component, pageProps }: AppProps) {
           getSiweMessageOptions={getSiweMessageOptions}
         >
           <RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
+            <Urql.Provider value={client}>
+            <WalletTab />
             <Component {...pageProps} />
-            <Test />
+            </Urql.Provider>
           </RainbowKitProvider>
         </RainbowKitSiweNextAuthProvider>
       </WagmiConfig>
