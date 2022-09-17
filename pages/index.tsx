@@ -13,15 +13,16 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
 
 const Home: NextPage = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'flex-end',
-        padding: 12,
-      }}
-    >
-      <ConnectButton />
-    </div>
+    // <div
+    //   style={{
+    //     display: 'flex',
+    //     justifyContent: 'flex-end',
+    //     padding: 12,
+    //   }}
+    // >
+    //   <ConnectButton />
+    // </div>
+    <>An open judicial system. Create your case, choose your judge, receive your ruling</>
   );
 };
 

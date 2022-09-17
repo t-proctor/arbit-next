@@ -16,13 +16,12 @@ import {
   GetSiweMessageOptions,
 } from '@rainbow-me/rainbowkit-siwe-next-auth';
 import { ChakraProvider } from '@chakra-ui/react'
-import Test from './components/Test';
 import WalletTab from './components/WalletTab';
 import * as Urql from "urql"
 
 
 const client = Urql.createClient({
-  url: 'https://api.studio.thegraph.com/query/32185/arbit/v0.0.1',
+  url: 'https://api.studio.thegraph.com/query/32185/arbit/v0.0.3',
 });
 
 
