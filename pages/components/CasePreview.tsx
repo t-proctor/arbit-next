@@ -1,67 +1,67 @@
 import { Box, Badge, Image, Flex, Heading, Text, Button, Stack } from '@chakra-ui/react'
 import { Link } from 'next/link'
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 export default function CasePreview(props) {
-    const caseObj = {
-        id: props.caseObj.id,
-        name: props.caseObj.name,
-        party1: props.caseObj.party1,
-        party2: props.caseObj.party2,
-        judge: props.caseObj.judge,
-        status: props.caseObj.status,
-        decisionMaker: props.caseObj.decisionMaker,
-        winner: props.caseObj.winner,
-        description: props.caseObj.description,
-        tags: props.caseObj.tags,
-        caseRuling: props.caseObj.caseRuling,
+	const caseObj = {
+		id: props.caseObj.id,
+		name: props.caseObj.name,
+		party1: props.caseObj.party1,
+		party2: props.caseObj.party2,
+		judge: props.caseObj.judge,
+		status: props.caseObj.status,
+		decisionMaker: props.caseObj.decisionMaker,
+		winner: props.caseObj.winner,
+		description: props.caseObj.description,
+		tags: props.caseObj.tags,
+		caseRuling: props.caseObj.caseRuling,
+	}
+	const router = useRouter()
 
-    }
-    const router = useRouter();
+	// onClick={() => router.push('/Cases/' + caseObj.id)}')
+	return (
+		<Box
+			as="button"
+			onClick={() =>
+				router.push({ pathname: '/Cases/' + caseObj.id, query: { caseObj: JSON.stringify(caseObj) } })
+			}
+			maxW="sm"
+			borderWidth="1px"
+			borderRadius="lg"
+			overflow="hidden"
+		>
+			{/* <Image src={property.imageUrl} alt={property.imageAlt} /> */}
 
-    // onClick={() => router.push('/Cases/' + caseObj.id)}')
-    return (
-    <Box as="button" onClick={() => router.push({pathname:'/Cases/' + caseObj.id, query: {"caseObj": JSON.stringify(caseObj)}} )} maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
-        {/* <Image src={property.imageUrl} alt={property.imageAlt} /> */}
+			<Box p="6">
+				<Box display="flex" alignItems="baseline">
+					<Badge borderRadius="full" px="2" colorScheme="teal">
+						New
+					</Badge>
+					<Box
+						color="gray.500"
+						fontWeight="semibold"
+						letterSpacing="wide"
+						fontSize="xs"
+						textTransform="uppercase"
+						ml="2"
+					>
+						Party1: {caseObj.party1} &bull; Party2: {caseObj.party2}
+					</Box>
+				</Box>
 
-        <Box p='6'>
-        <Box display='flex' alignItems='baseline'>
-            <Badge borderRadius='full' px='2' colorScheme='teal'>
-            New
-            </Badge>
-            <Box
-            color='gray.500'
-            fontWeight='semibold'
-            letterSpacing='wide'
-            fontSize='xs'
-            textTransform='uppercase'
-            ml='2'
-            >
-            Party1: {caseObj.party1}  &bull; Party2: {caseObj.party2} 
-            </Box>
-        </Box>
+				<Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" noOfLines={1}>
+					{caseObj.name}
+				</Box>
 
-        <Box
-            mt='1'
-            fontWeight='semibold'
-            as='h4'
-            lineHeight='tight'
-            noOfLines={1}
-        >
-            {caseObj.name}
-        </Box>
-
-        <Box>
-            Judge: {caseObj.judge}
-            <Box as='span' color='gray.600' fontSize='sm'>
-            {caseObj.judge}
-            </Box>
-        </Box>
-        </Box>
-    </Box>
-    )
-
+				<Box>
+					Judge: {caseObj.judge}
+					<Box as="span" color="gray.600" fontSize="sm">
+						{caseObj.judge}
+					</Box>
+				</Box>
+			</Box>
+		</Box>
+	)
 }
-
 
 // function AirbnbCard() {
 //     const property = {
@@ -74,11 +74,11 @@ export default function CasePreview(props) {
 //       reviewCount: 34,
 //       rating: 4,
 //     }
-  
+
 //     return (
 //       <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden'>
 //         <Image src={property.imageUrl} alt={property.imageAlt} />
-  
+
 //         <Box p='6'>
 //           <Box display='flex' alignItems='baseline'>
 //             <Badge borderRadius='full' px='2' colorScheme='teal'>
@@ -95,7 +95,7 @@ export default function CasePreview(props) {
 //               {property.beds} beds &bull; {property.baths} baths
 //             </Box>
 //           </Box>
-  
+
 //           <Box
 //             mt='1'
 //             fontWeight='semibold'
@@ -105,14 +105,14 @@ export default function CasePreview(props) {
 //           >
 //             {property.title}
 //           </Box>
-  
+
 //           <Box>
 //             {property.formattedPrice}
 //             <Box as='span' color='gray.600' fontSize='sm'>
 //               / wk
 //             </Box>
 //           </Box>
-  
+
 //           <Box display='flex' mt='2' alignItems='center'>
 //             {Array(5)
 //               .fill('')
