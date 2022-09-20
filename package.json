@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.10.4",
     "@rainbow-me/rainbowkit": "workspace:*",
     "@rainbow-me/rainbowkit-siwe-next-auth": "workspace:*",
+    "@worldcoin/id": "^0.8.0",
     "axios": "^0.27.2",
     "ethers": "^5.0.0",
     "formik": "^2.2.9",
