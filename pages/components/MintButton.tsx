@@ -3,6 +3,7 @@ import { Button } from '@chakra-ui/react'
 import { useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import axios from 'axios'
+
 export default function MintButton(props) {
 	const { address, isConnecting, isDisconnected } = useAccount()
 	if (isConnecting) return <div>Connecting…</div>
@@ -39,7 +40,7 @@ export default function MintButton(props) {
 					Authorization: process.env.NEXT_PUBLIC_NFTPORT_API_KEY,
 				},
 				data: {
-					chain: 'rinkeby',
+					chain: 'polygon',
 					contract_address: process.env.NEXT_PUBLIC_NFTPORT_CONTRACT_ADDRESS,
 					metadata_uri: response.data.metadata_uri,
 					mint_to_address: props.caseObj.judge,
