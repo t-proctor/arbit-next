@@ -12,7 +12,7 @@ import WalletTab from './components/WalletTab'
 import * as Urql from 'urql'
 
 const client = Urql.createClient({
-	url: 'https://api.studio.thegraph.com/query/32185/arbit/v0.0.3',
+	url: process.env.NEXT_PUBLIC_GRAPHQL_URL,
 })
 
 const { chains, provider, webSocketProvider } = configureChains(

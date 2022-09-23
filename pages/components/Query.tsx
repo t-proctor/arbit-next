@@ -3,7 +3,7 @@ import CasePreview from './CasePreview'
 
 const CasesQuery = `
   query {
-    cases(first: 5) {
+    cases(first: 10) {
         id
         name
         party1
@@ -22,6 +22,7 @@ const CasesQuery = `
 const Query = () => {
 	const [result, reexecuteQuery] = useQuery({
 		query: CasesQuery,
+		requestPolicy: 'network-only',
 	})
 
 	const { data, fetching, error } = result
