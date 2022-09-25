@@ -54,7 +54,7 @@ const wagmiClient = createClient({
 })
 
 const getSiweMessageOptions: GetSiweMessageOptions = () => ({
-	statement: 'Sign in to the RainbowKit + SIWE example app',
+	statement: 'Sign in to the Arbit app',
 })
 
 export default function App({ Component, pageProps }: AppProps) {
