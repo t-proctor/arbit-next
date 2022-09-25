@@ -62,10 +62,6 @@ export default function JudgeButton(props) {
 			gasLimit: 1000000,
 		},
 	})
-	console.log('parties', props.party1, props.party2)
-	console.log('id', id)
-	console.log('winner', winnerAddress)
-	console.log('ruling', rulingValue)
 
 	const { write } = useContractWrite(config)
 	const onSubmit = () => {
@@ -81,13 +77,6 @@ export default function JudgeButton(props) {
 					<ModalHeader>Judge the case</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody pb={6}>
-						{/* <form onSubmit={handleSubmit(onSubmit)}>
-                            <Textarea {...register("caseRuling", {required: true})} />
-
-                            <Input {...register("winner", { required: true })} type="radio" value="Party 1, Party 2" />
-
-                            <input type="submit" />
-                        </form> */}
 						<FormControl>
 							<FormLabel>Winner</FormLabel>
 							<RadioGroup onChange={handleWinnerChange} value={winnerValue}>
@@ -120,56 +109,4 @@ export default function JudgeButton(props) {
 			</Modal>
 		</>
 	)
-}
-
-{
-	/* function InitialFocus() {
-    const { isOpen, onOpen, onClose } = useDisclosure()
-  
-    const initialRef = React.useRef(null)
-    const finalRef = React.useRef(null)
-  
-    return (
-      <>
-        <Button onClick={onOpen}>Judge</Button>
-
-  
-        <Modal
-          initialFocusRef={initialRef}
-          isOpen={isOpen}
-          onClose={onClose}
-        >
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Create your account</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody pb={6}>
-                <form onSubmit={handleSubmit(judgeCase)}>
-                <Input type="text" placeholder="Case Name" {...register("Case Name", {required: true})} /> 
-                <Textarea {...register("caseRuling", {required: true})} />
-
-              <FormControl>
-                <FormLabel>First name</FormLabel>
-                <Input ref={initialRef} placeholder='First name' />
-              </FormControl>
-  
-              <FormControl mt={4}>
-                <FormLabel>Last name</FormLabel>
-                <Input placeholder='Last name' />
-              </FormControl>
-            </ModalBody>
-  
-            <ModalFooter>
-              <Button colorScheme='blue' mr={3}>
-                Save
-              </Button>
-              <Button onClick={judgeCase} mr={3}> Judge</Button>
-
-              <Button onClick={onClose}>Cancel</Button>
-            </ModalFooter>
-          </ModalContent>
-        </Modal>
-      </>
-    )
-  } */
 }

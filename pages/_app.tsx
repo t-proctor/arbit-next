@@ -9,6 +9,7 @@ import { SessionProvider } from 'next-auth/react'
 import { RainbowKitSiweNextAuthProvider, GetSiweMessageOptions } from '@rainbow-me/rainbowkit-siwe-next-auth'
 import { ChakraProvider } from '@chakra-ui/react'
 import WalletTab from './components/WalletTab'
+import { Box } from '@chakra-ui/react'
 import * as Urql from 'urql'
 
 const client = Urql.createClient({
@@ -65,7 +66,9 @@ export default function App({ Component, pageProps }: AppProps) {
 						<RainbowKitProvider appInfo={demoAppInfo} chains={chains}>
 							<Urql.Provider value={client}>
 								<WalletTab />
-								<Component {...pageProps} />
+								<Box maxW="70%" justifyContent="center" ml="25%" p="5" mt="5%">
+									<Component {...pageProps} />
+								</Box>
 							</Urql.Provider>
 						</RainbowKitProvider>
 					</RainbowKitSiweNextAuthProvider>

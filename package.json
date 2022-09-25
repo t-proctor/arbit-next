@@ -1,5 +1,5 @@
 {
-  "name": "with-next-siwe-next-auth",
+  "name": "next-app",
   "private": true,
   "version": "0.0.2",
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.10",
     "@chakra-ui/react": "^2.3.2",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",

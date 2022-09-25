@@ -45,37 +45,14 @@ export default function WorldcoinBadge() {
 	if (isConnecting) return <div>Connecting…</div>
 	if (isDisconnected) return <div>Disconnected</div>
 
-	// const widgetProps: WidgetProps = {
-	// 	// actionId: 'wid_staging_PCNQeDC5CX',
-	// 	actionId: 'wid_staging_20aa3bc815bc51bc9c0f8cb953f5dc03',
-	// 	signal: 'user-id-1',
-	// 	enableTelemetry: true,
-	// 	appName: 'ConfCon',
-	// 	signalDescription: 'Get your ticket to ConfCon 2023',
-	// 	// theme: 'dark',
-	// 	debug: true, // Recommended **only** for development
-	// 	onSuccess: result => console.log(result),
-	// 	onError: ({ code, detail }) => console.log({ code, detail }),
-	// 	onInitSuccess: () => console.log('Init successful'),
-	// 	onInitError: error => console.log('Error while initialization World ID', error),
-	// }
-	// const WorldIDWidget = dynamic<WidgetProps>(() => import('@worldcoin/id').then(mod => mod.WorldIDWidget), {
-	// 	ssr: false,
-	// })
 	return (
-		// <WorldIDWidget {...widgetProps} />
-
 		<WorldIDWidget
 			actionId={process.env.NEXT_PUBLIC_WORLDCOIN_ACTION_ID}
-			// actionId="wid_staging_20aa3bc815bc51bc9c0f8cb953f5dc03"
-			// obtain this from developer.worldcoin.org
 			signal="my_signal"
 			enableTelemetry
-			// onSuccess={verificationResponse => console.log(verificationResponse)}
 			onSuccess={() => submitNFT(address)}
 			onError={error => console.error(error)}
 			debug={true} // to aid with debugging, remove in production
 		/>
-		// <Button onClick={() => submitNFT(address)}>Submit NFT</Button>
 	)
 }

@@ -17,5 +17,9 @@ export default function ApproveButton(props) {
 	const approveCase = () => {
 		write?.()
 	}
-	return <Button onClick={approveCase}>Approve</Button>
+	return (
+		<Button mt="5" onClick={approveCase}>
+			Approve
+		</Button>
+	)
 }

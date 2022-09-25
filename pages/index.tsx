@@ -19,7 +19,7 @@ const Home: NextPage = () => {
 		// <>
 		// push to right
 		// <Flex justifyContent="flex-end">
-		<Flex gap={4} mb={8} w="full" justifyContent="center">
+		<Flex gap={4} mr="80" mb={8} justifyContent="center">
 			<Grid textAlign="center" pt={100}>
 				<Heading as="h1" fontSize="200px">
 					Arbit
@@ -35,8 +35,6 @@ const Home: NextPage = () => {
 		</Flex>
 		// </>
 	)
-
-	// return <>An open judicial system. Create your case, choose your judge, receive your ruling</>
 }
 
 export default Home
